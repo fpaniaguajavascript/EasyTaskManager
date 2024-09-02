@@ -1,0 +1,7 @@
+{
+  "name": "EasyTaskManager",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
