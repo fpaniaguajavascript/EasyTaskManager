@@ -14,17 +14,17 @@
   </ion-header>
 
   <ion-item>
-    <ion-input label="Tarea" placeholder="Introduce nombre"></ion-input>
+    <ion-input label="Tarea" placeholder="Introduce nombre" [(ngModel)]="tarea"></ion-input>
     <ion-badge slot="start">{{servicioTareas.tareas.length}}</ion-badge>
   </ion-item>
-  <ion-button color="success" expand="full">Crear</ion-button>
+  <ion-button color="success" expand="full" (click)="crear()">Crear</ion-button>
   <ion-list>
-    <ion-item-sliding *ngFor="let tarea of servicioTareas.tareas">
+    <ion-item-sliding *ngFor="let tarea of servicioTareas.tareas; index as i">
       <ion-item [button]="true">
         <ion-label>{{tarea}}</ion-label>
       </ion-item>
       <ion-item-options slot="end">
-        <ion-item-option color="danger" expandable="true">
+        <ion-item-option color="danger" expandable="true" (click)="borrar(i)">
           <ion-label>Borrar</ion-label>
         </ion-item-option>
       </ion-item-options>
